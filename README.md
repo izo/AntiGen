@@ -1,3 +1,3 @@
-# Antistatic Logo Generator
+# Anti- Logo Generator
 
-https://nerdyscout.github.io/antistatic-generator
+https://nerdyscout.github.io/AntiGen
