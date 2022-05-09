@@ -8,36 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/forms.css">
-    <title>Antifa Generator</title>
+    <title>Generator</title>
 </head>
 
 <body>
     <div class="container">
         <form>
-            <h1>Antifa Generator</h1>
+            <h1>Generator</h1>
             <div class="form-group">
                 <input id="antifa-group" type="text" required="required" />
                 <label for="input" class="control-label">Grupo</label><i class="bar"></i>
             </div>
             <div class="form-group">
                 <select id='antifa-label'>
-                    <option>Antifacista</option>
-                    <option>Antifacistas</option>
+                    <option>Antistatic</option>
+                    <option>Antistatische</option>
+                    <option>Antielektrostatische</option>
                 </select>
                 <label for="select" class="control-label"></label><i class="bar"></i>
             </div>
         </form>
         <div class="button-container">
-            <button type="button" class="button" onClick="generateImage()"><span>Gerar imagem</span></button>
-            <button type="button" class="button" onClick="downloadImage()"><span>Baixar</span></button>
+            <button type="button" class="button" onClick="generateImage()"><span>generate</span></button>
+            <button type="button" class="button" onClick="downloadImage()"><span>download</span></button>
             <button type="button" class="button"
-                onclick="window.open('https://medium.com/@matheusMmota/antifascismo-n%C3%A3o-%C3%A9-moldura-para-o-seu-perfil-d648c1b3caa8')"><span>Antifacista?</span></button>
+                onclick="window.open('https://en.m.wikipedia.org/wiki/Antifaschistische_Aktion')"><span>Antifa?</span></button>
 
         </div>
 
 
         <canvas id="logo" height="500" width="500">
-            Seu navegador não suporta canvas
+            Browser not supportet.
         </canvas>
     </div>
     <script>
@@ -50,7 +51,7 @@
 
             ctx = logoCanvas.getContext("2d");
             const background = new Image();
-            background.src = 'img/antifascist-action.png';
+            background.src = 'img/antistatic-action.svg';
             background.onload = function () {
                 ctx.drawImage(background, 0, 0, 500, 500);
                 writeTopCircle(antifaGroup.value, "logo", 510, "white")
@@ -60,11 +61,11 @@
         };
 
         function downloadImage() {
-            const img = logoCanvas.toDataURL("image/png");
+            const img = logoCanvas.toDataURL("image/svg");
             console.log('img :>> ', img);
             const link = document.createElement('a');
             link.href = img;
-            link.download = 'Download.jpg';
+            link.download = 'antistatic.jpg';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
